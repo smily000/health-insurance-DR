@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+    <title>risk calculator</title>
+</head>
+
+<body>
+    <h1>Insurance Calculator</h1>
+    <p> Hello I will ask you a set of question regarding your age, physcial health, etc.  </p>
+    
+    <label>whats your age </label><br />
+    <select id="ageID"
+        <option value="0">less than 30 </option>
+        <option value="10">30 to 45</option>
+        <option value="20">45 to 60</option>
+        <option value="30">greater than 60</option>
+    </select>
+    <br /><br />
+
+    <label>what is your BMI</label><br />
+    <select id="bmID"
+        <option value="0">normal</option>
+        <option value="30">overweight</option>
+        <option value="75">other</option>
+    </select>
+    <p>**This is not the correct wat to calcuate BMI. Instead you ask for height in feet/inches, weight in ibs, convert both to meters and kg, and then calculate BMI.</p>
+    <br /><br />
+    
+    <label>What is your blood pressure</label><br />
+    <select id="bloodplessureID"
+        <option value="0">normal</option>
+        <option value="15">elavated</option>
+        <option value="30">stage 1 </option>
+        <option value="75">stage 2</option>
+        <option value="100">crisis</option>
+    </select>
+    <p>**This is a adequate wat to identify blood pressure. the instruction and/or messages need to be improves.</p>
+    <br /><br />
+
+    <label>DO you have cancer</label><br />
+    <select id="cancerID"
+        
+        <option value="4">agree </option>
+        <option value="3">neither agree nor disagree</option>
+        <option value="2">disagree</option>
+        <option value="1">strongly disgree</option>
+    </select>
+    <br /><br />
+
+    <label>Do you have Alzhemier's?.</label><br />
+    <select id="alzheimersID"
+        <option value="0">no</option>
+        <option value="10">yes</option>
+    </select>
+    <br /><br />
+
+    <br /><br /><br />
+
+    <button onclick="calculateRisk()">Calculate risk</button>
+    <p id="riskID"</p>
+    <p id="messageID"></p>
+
+
+    <p>A better way to calcualter BMI</p>
+    <LABEL>What is your heaight in feet and inches</LABEL><br />
+    <select id="heightID">
+        <option value-"54">4'6" or shoerter </option>
+        <option value-"56">4'8"</option>
+        <option value-"58">4'10'</option>
+        <option value-"60">5'0"</option>
+        <option value-"62">5'2"</option>
+        <option value-"64">5'4"</option>
+        <option value-"66">5'6"</option>
+        <option value-"68">5'8"</option>
+        <option value-"70">5'10"</option>
+        <option value-"72">6'0"</option>
+        <option value-"74">6'2"</option>
+        <option value-"76">6'4"</option>
+        <option value-"80">7'0"</option> 
+
+    </select>
+    <br><br />
+
+    <label>what is your approxiater weight</label><br />
+    <select id="weightID">
+        <option value="90">90 lbs</option>
+        <option value="100">100 lbs</option>
+        <option value="110">110 lbs</option>
+        <option value="120">120 lbs</option>
+        <option value="130">130 ilbs</option>
+        <option value="140">140 ilbs</option>
+        <option value="150">150ilbs</option>
+        <option value="160">160lbs</option>
+        <option value="170">170 ilbs</option>
+        <option value="180">180lbs</option>
+        <option value="190">190 lbs</option>
+        <option value="200">200 lbs</option>
+        <option value="210">210 lbs</option.
+    </select>
+    <br><br />
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <p id="BMIResultID"</p>
+    <p id="bmiMessageId"</p>
+   
+
+
+
+<script>
+
+    console.log("starting Danny Insurance Risk Calculator")
+
+    
+    function CalculateRisk() {
+        console.log("calculateRisk()");
+
+        
+        let ageResponseValue = parseInt(Document.getElementbyId("ageID").selectedOption[0].value);
+        console.log("ageResponsiveValue = " + ageResponsiveValue); 
+        
+        
+        let bmiResponseValue = parseInt(Document.getElementbyId("bmiD").selectedOption[0].value);
+        console.log("bmiResponsiveValue = " + bmiResponsiveValue); 
+
+        
+        let bloodPressureResponseValue = parseInt(Document.getElementbyId("ageID").selectedOption[0].value);
+        console.log("bloodpressureResponsiveValue = " + bloodpressureResponsiveValue); 
+
+        let diabetesResponseValue = parseInt(Document.getElementbyId("diabetesID").selectedOption[0].value);
+        console.log("alzheimers = " + diabetesResponsiveValue); 
+
+        let cancerResponseValue = parseInt(Document.getElementbyId("cancerID").selectedOption[0].value);
+        console.log("alzheimers = " + alzheimersResponsiveValue); 
+
+        let alzheimerResponseValue = parseInt(Document.getElementbyId("cancerrID").selectedOption[0].value);
+        console.log("cancerResponseValue = " + cancerResponsiveValue); 
+
+        
+        
+        
+        let totalRisk= ageResponsiveValue + bmiResponseValue + bloodpressureResponseValue + diabetesResponseValue + cancerResponseValue +alzheimersResponseValue;
+        console.log("totalRisk= " + totalRisk); 
+
+        documet.getElementlyById("riskID").innerHTML ="your total risk is" +totalRisks
+
+        let message = ""
+        if (totalRisk <=20){
+            message = "low risk"
+        }else if(totalRisk <= 50){
+            message = "moderate risk"
+        }else if (totalRisk<=75){
+            message = "high risk"
+        }else{
+            message ="unsurable"
+        } 
+
+        document.getElementById(messageID).innerHTML = message;
+    }
+
+
+</script>
+</body>
+</html>
